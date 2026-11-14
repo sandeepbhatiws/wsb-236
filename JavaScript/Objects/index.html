@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        // var userInfo = {};  // Empty Object
+
+        // var userInfo = {
+        //     email : 'tetsing@gmail.com',
+        //     name : 'Testing',
+        //     mobile_number : 1234567890
+        // }
+
+        // userInfo['name'] = 'Test';
+        // userInfo['age'] = 25;
+
+        // console.log(userInfo['name']);
+        // console.log(userInfo['email']);
+        // console.log(userInfo);
+
+        var userInfos = [
+            {
+                name : 'User 1',
+                email : 'user1@gmail.com',
+                age : 25
+            },
+            {
+                email : 'user2@gmail.com',
+                name : 'User 2',
+                age : 32
+            },
+            {
+                name : 'User 3',
+                email : 'user3@gmail.com',
+                age : 30
+            }
+        ]
+
+
+        // for(var data of userInfos){
+        //     console.log(data['name'])
+        // }
+
+        // userInfos.filter((value) => {
+        //     console.log(value.name, value.email)
+        // })
+
+        // userInfos.map((value) => {
+        //     console.log(value.name, value.email)
+        // })
+
+        // var filterData = userInfos.filter((value) => {
+        //     if(value.age >= 30){
+        //         return value;
+        //     }
+        // })
+
+        var filterData = userInfos.map((value) => {
+            // value.age += 5;
+            // return value;
+
+            if(value.age >= 30){
+                value.age += 5;
+                return value;
+            } else {
+                return value;
+            }
+        })
+
+        console.log(filterData)
+        
+        var display = '<ul>';
+
+        userInfos.forEach((value) => {
+            display += "<li>"+ value.name +"</li>";
+        })
+
+        display += "</ul>";
+
+        document.write(display);
+
+    </script>
+</body>
+</html>

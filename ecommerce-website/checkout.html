@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Secure Checkout — Lumora</title>
+  <meta name="description" content="Complete your Lumora order: contact details, shipping and payment.">
+  <meta name="robots" content="noindex">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="checkout" class="bg-slate-50">
+  <a href="#main" class="skip-link">Skip to content</a>
+
+  <!-- Focused checkout header (no store navigation to reduce distractions) -->
+  <header class="border-b border-slate-200 bg-white">
+    <div class="container flex h-16 items-center justify-between gap-4 lg:h-20">
+      <a href="index.html" class="flex items-center gap-2" aria-label="Lumora — home">
+        <svg viewBox="0 0 32 32" class="h-8 w-8 shrink-0" aria-hidden="true"><rect width="32" height="32" rx="9" fill="#4f46e5"/><path d="M11 8v16h11" stroke="#fff" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round" fill="none"/><circle cx="22" cy="10" r="2.6" fill="#c7d2fe"/></svg>
+        <span class="text-xl font-extrabold tracking-tight">Lumora</span>
+      </a>
+      <p class="flex items-center gap-2 text-sm font-bold text-emerald-700">
+        <i data-lucide="lock" class="h-4 w-4" aria-hidden="true"></i> <span>Secure checkout</span>
+      </p>
+      <a href="cart.html" class="hidden items-center gap-1 text-sm font-semibold text-slate-600 hover:text-slate-900 sm:inline-flex">
+        <i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i> Back to cart
+      </a>
+    </div>
+  </header>
+  <div class="bg-amber-50 text-amber-900">
+    <p class="container flex items-center justify-center gap-2 py-2.5 text-center text-xs font-semibold sm:text-sm">
+      <i data-lucide="info" class="hidden h-4 w-4 shrink-0 sm:block" aria-hidden="true"></i>
+      Demo checkout — no real payment is processed and no card details are collected.
+    </p>
+  </div>
+
+  <main id="main" class="container py-8 lg:py-12">
+    <!-- Checkout form + summary -->
+    <div id="checkout-view" hidden>
+      <div class="grid gap-8 lg:grid-cols-[minmax(0,1fr)_26rem] lg:gap-12">
+        <div>
+          <h1 class="text-3xl font-extrabold tracking-tight">Checkout</h1>
+
+          <ol class="mt-6 flex items-center gap-2 sm:gap-3" aria-label="Checkout progress">
+            <li class="step is-active" data-step-indicator="1" aria-current="step"><span class="step__dot">1</span><span class="step__label">Information</span></li>
+            <li class="step-line" aria-hidden="true" data-step-line="1"></li>
+            <li class="step" data-step-indicator="2"><span class="step__dot">2</span><span class="step__label">Shipping</span></li>
+            <li class="step-line" aria-hidden="true" data-step-line="2"></li>
+            <li class="step" data-step-indicator="3"><span class="step__dot">3</span><span class="step__label">Payment</span></li>
+          </ol>
+
+          <form id="checkout-form" class="mt-8" novalidate>
+            <!-- Step 1: Information -->
+            <section data-step-panel="1" aria-labelledby="contact-title" class="space-y-8">
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <h2 id="contact-title" class="text-xl font-extrabold" tabindex="-1">Contact information</h2>
+                <p class="mt-1 text-sm text-slate-500">We'll use these details to send order updates.</p>
+                <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div class="sm:col-span-2">
+                    <label for="fullName" class="form-label">Full name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="fullName" name="fullName" class="form-input" autocomplete="name" required aria-describedby="fullName-error">
+                    <p id="fullName-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="email" class="form-label">Email address <span class="req" aria-hidden="true">*</span></label>
+                    <input id="email" name="email" type="email" class="form-input" autocomplete="email" inputmode="email" placeholder="you@example.com" required aria-describedby="email-error">
+                    <p id="email-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="phone" class="form-label">Phone number <span class="req" aria-hidden="true">*</span></label>
+                    <input id="phone" name="phone" type="tel" class="form-input" autocomplete="tel" inputmode="tel" placeholder="98765 43210" required aria-describedby="phone-hint phone-error">
+                    <p id="phone-hint" class="mt-1 text-xs text-slate-500">For delivery updates. Indian numbers: 10 digits.</p>
+                    <p id="phone-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <h2 class="text-xl font-extrabold">Shipping address</h2>
+                <div class="mt-6 grid gap-5 sm:grid-cols-2">
+                  <div class="sm:col-span-2">
+                    <label for="address" class="form-label">Address <span class="req" aria-hidden="true">*</span></label>
+                    <input id="address" name="address" class="form-input" autocomplete="address-line1" placeholder="House number and street" required aria-describedby="address-error">
+                    <p id="address-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="apartment" class="form-label">Apartment, suite or landmark <span class="font-normal text-slate-400">(optional)</span></label>
+                    <input id="apartment" name="apartment" class="form-input" autocomplete="address-line2">
+                  </div>
+                  <div>
+                    <label for="city" class="form-label">City <span class="req" aria-hidden="true">*</span></label>
+                    <input id="city" name="city" class="form-input" autocomplete="address-level2" required aria-describedby="city-error">
+                    <p id="city-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="state" class="form-label">State / region <span class="req" aria-hidden="true">*</span></label>
+                    <input id="state" name="state" class="form-input" autocomplete="address-level1" list="state-list" required aria-describedby="state-error">
+                    <datalist id="state-list">
+                      <option value="Andhra Pradesh"></option><option value="Assam"></option><option value="Bihar"></option>
+                      <option value="Chhattisgarh"></option><option value="Delhi"></option><option value="Goa"></option>
+                      <option value="Gujarat"></option><option value="Haryana"></option><option value="Himachal Pradesh"></option>
+                      <option value="Jharkhand"></option><option value="Karnataka"></option><option value="Kerala"></option>
+                      <option value="Madhya Pradesh"></option><option value="Maharashtra"></option><option value="Odisha"></option>
+                      <option value="Punjab"></option><option value="Rajasthan"></option><option value="Tamil Nadu"></option>
+                      <option value="Telangana"></option><option value="Uttar Pradesh"></option><option value="Uttarakhand"></option>
+                      <option value="West Bengal"></option>
+                    </datalist>
+                    <p id="state-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="postalCode" class="form-label">Postal / PIN code <span class="req" aria-hidden="true">*</span></label>
+                    <input id="postalCode" name="postalCode" class="form-input" autocomplete="postal-code" required aria-describedby="postalCode-error">
+                    <p id="postalCode-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="country" class="form-label">Country <span class="req" aria-hidden="true">*</span></label>
+                    <select id="country" name="country" class="form-input" autocomplete="country-name" required aria-describedby="country-error">
+                      <option value="IN" selected>India</option>
+                      <option value="US">United States</option>
+                      <option value="GB">United Kingdom</option>
+                      <option value="CA">Canada</option>
+                      <option value="AU">Australia</option>
+                      <option value="SG">Singapore</option>
+                      <option value="AE">United Arab Emirates</option>
+                    </select>
+                    <p id="country-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <a href="cart.html" class="btn btn-ghost"><i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i> Return to cart</a>
+                <button type="button" class="btn btn-primary btn-lg" data-next-step="2">Continue to shipping <i data-lucide="arrow-right" class="h-5 w-5" aria-hidden="true"></i></button>
+              </div>
+            </section>
+
+            <!-- Step 2: Shipping method -->
+            <section data-step-panel="2" aria-labelledby="shipping-title" class="space-y-8" hidden>
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <h2 id="shipping-title" class="text-xl font-extrabold" tabindex="-1">Shipping method</h2>
+                <div class="mt-3 rounded-2xl bg-slate-50 p-4 text-sm" id="ship-to-review"></div>
+                <fieldset class="mt-6">
+                  <legend class="sr-only">Choose a shipping method</legend>
+                  <div class="space-y-3" id="shipping-methods"></div>
+                </fieldset>
+              </div>
+              <div class="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <button type="button" class="btn btn-ghost" data-prev-step="1"><i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i> Back to information</button>
+                <button type="button" class="btn btn-primary btn-lg" data-next-step="3">Continue to payment <i data-lucide="arrow-right" class="h-5 w-5" aria-hidden="true"></i></button>
+              </div>
+            </section>
+
+            <!-- Step 3: Payment -->
+            <section data-step-panel="3" aria-labelledby="payment-title" class="space-y-8" hidden>
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <h2 id="payment-title" class="text-xl font-extrabold" tabindex="-1">Payment method</h2>
+                <p class="mt-1 text-sm text-slate-500">All options below are demonstrations — no payment will be taken.</p>
+                <fieldset class="mt-6" aria-describedby="payment-error">
+                  <legend class="sr-only">Choose a payment method</legend>
+                  <div class="space-y-3">
+                    <label class="radio-card">
+                      <input type="radio" name="payment" value="cod" checked>
+                      <span class="flex-1">
+                        <span class="flex items-center gap-2 font-bold"><i data-lucide="banknote" class="h-5 w-5 text-slate-500" aria-hidden="true"></i> Cash on Delivery</span>
+                        <span class="mt-1 block text-sm text-slate-500">Pay in cash or by UPI when your order arrives.</span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="payment" value="upi">
+                      <span class="flex-1">
+                        <span class="flex flex-wrap items-center gap-2 font-bold"><i data-lucide="smartphone" class="h-5 w-5 text-slate-500" aria-hidden="true"></i> UPI <span class="badge bg-amber-100 text-amber-800">Demo</span></span>
+                        <span class="mt-1 block text-sm text-slate-500">Google Pay, PhonePe, Paytm and other UPI apps.</span>
+                      </span>
+                    </label>
+                    <label class="radio-card">
+                      <input type="radio" name="payment" value="card">
+                      <span class="flex-1">
+                        <span class="flex flex-wrap items-center gap-2 font-bold"><i data-lucide="credit-card" class="h-5 w-5 text-slate-500" aria-hidden="true"></i> Credit or Debit Card <span class="badge bg-amber-100 text-amber-800">Demo</span></span>
+                        <span class="mt-1 block text-sm text-slate-500">Visa, Mastercard, RuPay and American Express.</span>
+                      </span>
+                    </label>
+                  </div>
+                </fieldset>
+                <div class="mt-4 flex gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900" id="payment-note" role="note"></div>
+                <p id="payment-error" class="field-error" aria-live="polite"></p>
+              </div>
+
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <h2 class="text-xl font-extrabold">Billing address</h2>
+                <label class="mt-4 flex cursor-pointer items-center gap-3 font-medium">
+                  <input type="checkbox" id="billingSame" class="check-input" checked>
+                  Same as shipping address
+                </label>
+                <div class="mt-6 grid gap-5 sm:grid-cols-2" id="billing-fields" hidden>
+                  <div class="sm:col-span-2">
+                    <label for="billingName" class="form-label">Full name <span class="req" aria-hidden="true">*</span></label>
+                    <input id="billingName" class="form-input" autocomplete="billing name" aria-describedby="billingName-error">
+                    <p id="billingName-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div class="sm:col-span-2">
+                    <label for="billingAddress" class="form-label">Address <span class="req" aria-hidden="true">*</span></label>
+                    <input id="billingAddress" class="form-input" autocomplete="billing address-line1" aria-describedby="billingAddress-error">
+                    <p id="billingAddress-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="billingCity" class="form-label">City <span class="req" aria-hidden="true">*</span></label>
+                    <input id="billingCity" class="form-input" autocomplete="billing address-level2" aria-describedby="billingCity-error">
+                    <p id="billingCity-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                  <div>
+                    <label for="billingPostal" class="form-label">Postal / PIN code <span class="req" aria-hidden="true">*</span></label>
+                    <input id="billingPostal" class="form-input" autocomplete="billing postal-code" aria-describedby="billingPostal-error">
+                    <p id="billingPostal-error" class="field-error" aria-live="polite"></p>
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-3xl bg-white p-6 shadow-soft sm:p-8">
+                <label class="flex cursor-pointer items-start gap-3 text-sm">
+                  <input type="checkbox" id="terms" class="check-input mt-0.5" aria-describedby="terms-error">
+                  <span>I agree to the <a href="about.html#terms" target="_blank" class="font-semibold text-brand-600 underline underline-offset-2">terms of service</a> and <a href="about.html#privacy" target="_blank" class="font-semibold text-brand-600 underline underline-offset-2">privacy policy</a>, and understand this is a demo order. <span class="req text-rose-600" aria-hidden="true">*</span></span>
+                </label>
+                <p id="terms-error" class="field-error" aria-live="polite"></p>
+              </div>
+
+              <div class="flex flex-col-reverse gap-3 sm:flex-row sm:items-center sm:justify-between">
+                <button type="button" class="btn btn-ghost" data-prev-step="2"><i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i> Back to shipping</button>
+                <button type="submit" class="btn btn-primary btn-lg" id="place-order">
+                  <i data-lucide="lock" class="h-5 w-5" aria-hidden="true"></i> <span id="place-order-label">Place order</span>
+                </button>
+              </div>
+            </section>
+          </form>
+        </div>
+
+        <!-- Order summary -->
+        <aside aria-labelledby="checkout-summary-title" class="lg:order-last">
+          <div class="rounded-3xl bg-white p-6 shadow-soft lg:sticky lg:top-8">
+            <div class="flex items-center justify-between">
+              <h2 id="checkout-summary-title" class="text-xl font-extrabold">Order summary</h2>
+              <a href="cart.html" class="text-sm font-semibold text-brand-600 hover:underline">Edit cart</a>
+            </div>
+            <ul class="mt-5 max-h-80 divide-y divide-slate-100 overflow-y-auto pr-1" id="checkout-items"></ul>
+            <dl class="mt-5 space-y-3 border-t border-slate-200 pt-5 text-sm" id="checkout-totals"></dl>
+          </div>
+        </aside>
+      </div>
+    </div>
+
+    <!-- Empty cart: checkout not possible -->
+    <div id="checkout-empty" class="mx-auto max-w-md py-12 text-center" hidden>
+      <img src="assets/images/empty-cart.svg" alt="" class="mx-auto h-44 w-44" width="176" height="176">
+      <h1 class="mt-6 text-2xl font-extrabold">Your cart is empty</h1>
+      <p class="mt-2 text-slate-600">Add a product to your cart before checking out.</p>
+      <a href="products.html" class="btn btn-primary btn-lg mt-8">Browse products</a>
+    </div>
+
+    <!-- Order confirmation -->
+    <section id="order-confirmation" class="mx-auto max-w-2xl" hidden aria-labelledby="confirmation-title"></section>
+  </main>
+
+  <footer class="border-t border-slate-200 bg-white">
+    <div class="container flex flex-col items-center justify-between gap-3 py-6 text-xs text-slate-500 sm:flex-row">
+      <p>© <span data-year></span> Lumora · Demo store</p>
+      <nav aria-label="Legal" class="flex gap-4">
+        <a href="about.html#privacy" class="hover:text-slate-900">Privacy</a>
+        <a href="about.html#terms" class="hover:text-slate-900">Terms</a>
+        <a href="about.html#returns" class="hover:text-slate-900">Returns</a>
+        <a href="contact.html" class="hover:text-slate-900">Help</a>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/checkout.js"></script>
+</body>
+</html>

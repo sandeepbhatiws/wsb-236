@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sale Countdown</title>
+
+    <!-- Tailwind CSS (Play CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+
+    <!-- Fonts : Orbitron for digits, Poppins for text -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600;800&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+</head>
+<body class="min-h-screen bg-slate-950 bg-[radial-gradient(ellipse_at_top,_#9f1239_0%,_#020617_60%)] flex items-center justify-center p-4 font-['Poppins']">
+
+    <!-- Sale Card -->
+    <div class="w-full max-w-4xl rounded-3xl bg-slate-900/80 border border-slate-800 shadow-2xl shadow-rose-500/10 p-5 sm:p-10">
+
+        <!-- Header -->
+        <div class="flex items-center justify-between">
+            <span class="rounded-full bg-rose-500/10 border border-rose-500/30 px-3 py-1 text-[10px] sm:text-xs font-semibold text-rose-400 tracking-widest uppercase">Mega Sale</span>
+            <span class="flex items-center gap-2 text-[10px] sm:text-xs text-amber-400 tracking-widest uppercase">
+                <span class="h-2 w-2 rounded-full bg-amber-400 animate-pulse"></span>
+                Coming Soon
+            </span>
+        </div>
+
+        <!-- Heading -->
+        <div class="mt-8 text-center">
+            <h1 class="font-['Orbitron'] text-2xl sm:text-4xl font-extrabold text-white tracking-wide">Sale Starts In</h1>
+            <p class="mt-3 text-sm sm:text-base text-slate-400">
+                Get ready! Up to
+                <span class="font-semibold bg-gradient-to-r from-amber-400 to-rose-500 bg-clip-text text-transparent">70% OFF</span>
+                on everything.
+            </p>
+        </div>
+
+        <!-- Countdown -->
+        <div class="mt-8 grid grid-cols-4 lg:grid-cols-5 gap-1.5 sm:gap-4 font-['Orbitron']">
+
+            <!-- Days -->
+            <div class="text-center">
+                <div id="days" class="rounded-2xl bg-slate-950 border border-slate-800 py-4 sm:py-6 text-3xl sm:text-5xl font-extrabold text-amber-400 tabular-nums [text-shadow:0_0_20px_rgb(251_191_36_/_0.6)]">03</div>
+                <p class="mt-3 text-[10px] sm:text-xs text-slate-500 tracking-wider sm:tracking-[0.25em]">DAYS</p>
+            </div>
+
+            <!-- Hours -->
+            <div class="text-center">
+                <div id="hours" class="rounded-2xl bg-slate-950 border border-slate-800 py-4 sm:py-6 text-3xl sm:text-5xl font-extrabold text-amber-400 tabular-nums [text-shadow:0_0_20px_rgb(251_191_36_/_0.6)]">07</div>
+                <p class="mt-3 text-[10px] sm:text-xs text-slate-500 tracking-wider sm:tracking-[0.25em]">HOURS</p>
+            </div>
+
+            <!-- Minutes -->
+            <div class="text-center">
+                <div id="minutes" class="rounded-2xl bg-slate-950 border border-slate-800 py-4 sm:py-6 text-3xl sm:text-5xl font-extrabold text-amber-400 tabular-nums [text-shadow:0_0_20px_rgb(251_191_36_/_0.6)]">11</div>
+                <p class="mt-3 text-[10px] sm:text-xs text-slate-500 tracking-wider sm:tracking-[0.25em]">MINUTES</p>
+            </div>
+
+            <!-- Seconds -->
+            <div class="text-center">
+                <div id="seconds" class="rounded-2xl bg-slate-950 border border-slate-800 py-4 sm:py-6 text-3xl sm:text-5xl font-extrabold text-amber-400 tabular-nums [text-shadow:0_0_20px_rgb(251_191_36_/_0.6)]">42</div>
+                <p class="mt-3 text-[10px] sm:text-xs text-slate-500 tracking-wider sm:tracking-[0.25em]">SECONDS</p>
+            </div>
+
+            <!-- Milliseconds (full width on small screens, 5th column on large screens) -->
+            <div class="col-span-4 lg:col-span-1 text-center">
+                <div id="milliseconds" class="rounded-2xl bg-slate-950 border border-rose-500/30 py-4 sm:py-6 text-3xl sm:text-5xl font-extrabold text-rose-500 tabular-nums [text-shadow:0_0_20px_rgb(244_63_94_/_0.6)]">856</div>
+                <p class="mt-3 text-[10px] sm:text-xs text-slate-500 tracking-wider sm:tracking-[0.25em]">MILLISECONDS</p>
+            </div>
+        </div>
+
+        <!-- Footer : Sale Date + Button -->
+        <div class="mt-8 pt-6 border-t border-slate-800 flex flex-col sm:flex-row items-center justify-between gap-4 text-center sm:text-left">
+            <div>
+                <p class="text-xs text-slate-500 uppercase tracking-widest">Sale Starts On</p>
+                <p id="saledate" class="mt-1 text-sm sm:text-lg font-semibold text-slate-200">Monday, 02 November 2026 &middot; 12:00 AM</p>
+            </div>
+
+            <button class="w-full sm:w-auto rounded-full bg-gradient-to-r from-amber-400 to-rose-500 px-6 py-3 text-sm font-semibold text-slate-950 shadow-lg shadow-rose-500/30 hover:opacity-90">
+                Notify Me
+            </button>
+        </div>
+
+    </div>
+
+
+    <script src="js/custom.js"></script>
+
+</body>
+</html>

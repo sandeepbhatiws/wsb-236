@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>About Us — Lumora</title>
+  <meta name="description" content="Lumora makes shopping simple: carefully chosen essentials, honest prices and support from real people. Learn about our story, mission and team.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="about">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero-gradient">
+      <div class="container py-14 text-center sm:py-20 lg:py-28">
+        <nav aria-label="Breadcrumb" class="flex justify-center">
+          <ol class="flex items-center gap-1.5 text-sm text-slate-500">
+            <li><a href="index.html" class="hover:text-slate-900">Home</a></li>
+            <li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li class="font-semibold text-slate-900" aria-current="page">About us</li>
+          </ol>
+        </nav>
+        <h1 class="text-balance mx-auto mt-6 max-w-4xl text-4xl font-extrabold leading-[1.05] tracking-tight sm:text-6xl lg:text-7xl">
+          Shopping Made <span class="text-brand-600">Simple</span>
+        </h1>
+        <p class="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-slate-600">
+          We believe buying great things should feel easy — fewer, better products, honest prices, and people who genuinely care when you need help.
+        </p>
+      </div>
+      <div class="container pb-14 lg:pb-20">
+        <div class="grid grid-cols-6 gap-4">
+          <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&w=1200&q=80" alt="The Lumora team collaborating around a table"
+            class="col-span-6 aspect-[16/9] w-full rounded-4xl object-cover shadow-lift sm:col-span-4" width="1200" height="675">
+          <img src="https://images.unsplash.com/photo-1441986300917-64674bd600d8?auto=format&fit=crop&w=800&q=80" alt="Neatly displayed products in a bright retail space"
+            class="col-span-2 hidden aspect-[3/4] h-full w-full rounded-4xl object-cover shadow-lift sm:block" loading="lazy" width="800" height="1067">
+        </div>
+      </div>
+    </section>
+
+    <!-- Story -->
+    <section class="container py-16 lg:py-24" aria-labelledby="story-title">
+      <div class="grid gap-12 lg:grid-cols-12 lg:gap-16">
+        <div class="lg:col-span-5">
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Our story</p>
+          <h2 id="story-title" class="text-balance mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">From a small curated shelf to a store people trust.</h2>
+        </div>
+        <div class="space-y-5 text-lg leading-relaxed text-slate-600 lg:col-span-7">
+          <p>Lumora began in 2019 with a simple frustration: online shopping had become noisy. Thousands of near-identical listings, confusing prices and reviews you couldn't trust made buying something simple feel like work.</p>
+          <p>So we did the opposite. We test products ourselves, work directly with brands we believe in, and keep our catalogue intentionally small. Every item earns its place by being well made, fairly priced and genuinely useful.</p>
+          <p>Today we ship everyday essentials — from headphones and backpacks to planters and skincare — to customers across India, with the same promise we started with: <strong class="text-slate-900">shopping made simple.</strong></p>
+          <p class="text-sm text-slate-400">Brand story and dates are placeholder content for this demo store.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Mission & vision -->
+    <section class="container pb-16 lg:pb-24" aria-label="Mission and vision">
+      <div class="grid gap-6 md:grid-cols-2">
+        <article class="rounded-4xl bg-slate-900 p-8 text-white sm:p-10">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white/10"><i data-lucide="target" class="h-6 w-6" aria-hidden="true"></i></span>
+          <h2 class="mt-6 text-2xl font-extrabold">Our mission</h2>
+          <p class="mt-3 leading-relaxed text-slate-300">To help people buy fewer, better things — by curating products we'd recommend to our own families, pricing them honestly, and making every step from browsing to returns effortless.</p>
+        </article>
+        <article class="rounded-4xl bg-brand-50 p-8 sm:p-10">
+          <span class="flex h-12 w-12 items-center justify-center rounded-2xl bg-white text-brand-600"><i data-lucide="eye" class="h-6 w-6" aria-hidden="true"></i></span>
+          <h2 class="mt-6 text-2xl font-extrabold">Our vision</h2>
+          <p class="mt-3 leading-relaxed text-slate-600">A world where online shopping feels as personal and trustworthy as your favourite neighbourhood store — where quality is the default and every customer feels looked after.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- Values -->
+    <section class="bg-slate-50 py-16 lg:py-24" aria-labelledby="values-title">
+      <div class="container">
+        <div class="max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">What we stand for</p>
+          <h2 id="values-title" class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Our values</h2>
+        </div>
+        <div class="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          <article class="rounded-3xl bg-white p-7 shadow-soft">
+            <i data-lucide="gem" class="h-7 w-7 text-brand-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-extrabold">Quality</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Every product is tested by our team before it's listed. If we wouldn't use it, we don't sell it.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-7 shadow-soft">
+            <i data-lucide="indian-rupee" class="h-7 w-7 text-brand-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-extrabold">Affordability</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">We work directly with brands and keep margins fair, so great design isn't reserved for premium price tags.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-7 shadow-soft">
+            <i data-lucide="scan-search" class="h-7 w-7 text-brand-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-extrabold">Transparency</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Clear prices with taxes included, honest stock levels and delivery dates you can rely on.</p>
+          </article>
+          <article class="rounded-3xl bg-white p-7 shadow-soft">
+            <i data-lucide="smile" class="h-7 w-7 text-brand-600" aria-hidden="true"></i>
+            <h3 class="mt-5 text-lg font-extrabold">Customer satisfaction</h3>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Real people answer every message, and returns are free and simple. Your happiness is how we measure success.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats -->
+    <section class="container py-16 lg:py-24" aria-labelledby="stats-title">
+      <h2 id="stats-title" class="sr-only">Lumora in numbers</h2>
+      <dl class="grid grid-cols-2 gap-y-10 lg:grid-cols-4">
+        <div class="border-l-2 border-brand-600 pl-5">
+          <dt class="text-sm font-semibold text-slate-500">Happy customers</dt>
+          <dd class="mt-1 text-4xl font-extrabold tracking-tight sm:text-5xl">120k+</dd>
+        </div>
+        <div class="border-l-2 border-brand-600 pl-5">
+          <dt class="text-sm font-semibold text-slate-500">Cities delivered to</dt>
+          <dd class="mt-1 text-4xl font-extrabold tracking-tight sm:text-5xl">850+</dd>
+        </div>
+        <div class="border-l-2 border-brand-600 pl-5">
+          <dt class="text-sm font-semibold text-slate-500">Average rating</dt>
+          <dd class="mt-1 text-4xl font-extrabold tracking-tight sm:text-5xl">4.8★</dd>
+        </div>
+        <div class="border-l-2 border-brand-600 pl-5">
+          <dt class="text-sm font-semibold text-slate-500">Partner brands</dt>
+          <dd class="mt-1 text-4xl font-extrabold tracking-tight sm:text-5xl">60+</dd>
+        </div>
+      </dl>
+      <p class="mt-8 text-xs text-slate-400">Sample figures for demonstration purposes — replace with your real metrics.</p>
+    </section>
+
+    <!-- Team -->
+    <section class="bg-slate-50 py-16 lg:py-24" aria-labelledby="team-title">
+      <div class="container">
+        <div class="max-w-2xl">
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">The people behind Lumora</p>
+          <h2 id="team-title" class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Meet the team</h2>
+          <p class="mt-3 text-slate-600">A small team of curators, designers and support specialists. (Sample profiles.)</p>
+        </div>
+        <ul class="mt-10 grid gap-8 sm:grid-cols-2 lg:grid-cols-4">
+          <li>
+            <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=600&q=80" alt="Portrait of Riya Malhotra" class="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" width="600" height="750">
+            <h3 class="mt-4 text-lg font-extrabold">Riya Malhotra</h3>
+            <p class="text-sm font-semibold text-brand-600">Founder &amp; CEO</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Started Lumora after a decade in retail buying. Still personally tests every new product.</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=600&q=80" alt="Portrait of Arjun Nair" class="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" width="600" height="750">
+            <h3 class="mt-4 text-lg font-extrabold">Arjun Nair</h3>
+            <p class="text-sm font-semibold text-brand-600">Head of Product Curation</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Works with makers and brands to find products that are built to last.</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=600&q=80" alt="Portrait of Sara Fernandes" class="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" width="600" height="750">
+            <h3 class="mt-4 text-lg font-extrabold">Sara Fernandes</h3>
+            <p class="text-sm font-semibold text-brand-600">Design Lead</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Shapes how Lumora looks and feels — from packaging to every pixel of the store.</p>
+          </li>
+          <li>
+            <img src="https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=600&q=80" alt="Portrait of Kabir Singh" class="aspect-[4/5] w-full rounded-3xl object-cover" loading="lazy" width="600" height="750">
+            <h3 class="mt-4 text-lg font-extrabold">Kabir Singh</h3>
+            <p class="text-sm font-semibold text-brand-600">Customer Experience</p>
+            <p class="mt-2 text-sm leading-relaxed text-slate-600">Leads the support team that answers every message within hours, seven days a week.</p>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- Why shop with us -->
+    <section class="container py-16 lg:py-24" aria-labelledby="why-title">
+      <div class="grid gap-12 lg:grid-cols-2 lg:items-center lg:gap-16">
+        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?auto=format&fit=crop&w=1000&q=80" alt="Team members packing and reviewing orders"
+          class="aspect-[4/3] w-full rounded-4xl object-cover shadow-lift" loading="lazy" width="1000" height="750">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Why Lumora</p>
+          <h2 id="why-title" class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Why shop with us</h2>
+          <ul class="mt-8 space-y-6">
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="badge-check" class="h-5 w-5" aria-hidden="true"></i></span>
+              <span><span class="block font-bold">Curated, tested products</span><span class="mt-1 block text-slate-600">No endless scrolling — just a focused range we stand behind.</span></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="truck" class="h-5 w-5" aria-hidden="true"></i></span>
+              <span><span class="block font-bold">Fast, tracked delivery</span><span class="mt-1 block text-slate-600">Free standard shipping over ₹999 with express and next-day options.</span></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="rotate-ccw" class="h-5 w-5" aria-hidden="true"></i></span>
+              <span><span class="block font-bold">30-day easy returns</span><span class="mt-1 block text-slate-600">Free doorstep pickup and quick refunds, no awkward questions.</span></span>
+            </li>
+            <li class="flex gap-4">
+              <span class="flex h-10 w-10 shrink-0 items-center justify-center rounded-xl bg-brand-50 text-brand-600"><i data-lucide="headphones" class="h-5 w-5" aria-hidden="true"></i></span>
+              <span><span class="block font-bold">Support from real people</span><span class="mt-1 block text-slate-600">Chat, email or call us 9am–9pm IST, every day of the week.</span></span>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-slate-50 py-16 lg:py-24" aria-labelledby="about-testimonials-title">
+      <div class="container">
+        <h2 id="about-testimonials-title" class="text-center text-3xl font-extrabold tracking-tight sm:text-4xl">What our customers say</h2>
+        <div class="mt-10 grid gap-6 lg:grid-cols-2">
+          <figure class="rounded-4xl bg-white p-8 shadow-soft sm:p-10">
+            <i data-lucide="quote" class="h-8 w-8 text-brand-200" aria-hidden="true"></i>
+            <blockquote class="mt-4 text-xl font-semibold leading-relaxed">“Lumora is the only store where I don't second-guess what I'm buying. Everything I've ordered has been exactly as described — and beautifully packed.”</blockquote>
+            <figcaption class="mt-6 text-sm"><span class="font-bold">Divya Rao</span> <span class="text-slate-500">· Hyderabad · Customer since 2021</span></figcaption>
+          </figure>
+          <figure class="rounded-4xl bg-white p-8 shadow-soft sm:p-10">
+            <i data-lucide="quote" class="h-8 w-8 text-brand-200" aria-hidden="true"></i>
+            <blockquote class="mt-4 text-xl font-semibold leading-relaxed">“I had an issue with a delivery address and the support team fixed it within ten minutes. That kind of care is rare online.”</blockquote>
+            <figcaption class="mt-6 text-sm"><span class="font-bold">Imran Qureshi</span> <span class="text-slate-500">· Lucknow · Customer since 2022</span></figcaption>
+          </figure>
+        </div>
+        <p class="mt-6 text-center text-xs text-slate-400">Testimonials are sample content for this demo store.</p>
+      </div>
+    </section>
+
+    <!-- Policies (linked from the footer) -->
+    <section class="container py-16 lg:py-24" id="policies" aria-labelledby="policies-title">
+      <div class="max-w-2xl">
+        <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Good to know</p>
+        <h2 id="policies-title" class="mt-3 text-3xl font-extrabold tracking-tight sm:text-4xl">Store policies</h2>
+        <p class="mt-3 text-slate-600">Summaries for this demo store. Replace with your own legally reviewed policies before going live.</p>
+      </div>
+      <div class="mt-10 grid gap-6 md:grid-cols-2">
+        <article id="shipping" class="scroll-mt-28 rounded-3xl border border-slate-200 p-7">
+          <h3 class="flex items-center gap-2 text-lg font-extrabold"><i data-lucide="truck" class="h-5 w-5 text-brand-600" aria-hidden="true"></i> Shipping policy</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Orders ship within 1 business day. Standard delivery (4–6 business days) is free over ₹999, otherwise ₹79. Express (2–3 days, ₹149) and next-day (₹249, select cities) are available at checkout.</p>
+        </article>
+        <article id="returns" class="scroll-mt-28 rounded-3xl border border-slate-200 p-7">
+          <h3 class="flex items-center gap-2 text-lg font-extrabold"><i data-lucide="rotate-ccw" class="h-5 w-5 text-brand-600" aria-hidden="true"></i> Returns &amp; refunds</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Return unused items in original packaging within 30 days. We arrange a free pickup, and refunds are issued to the original payment method within 5–7 business days of inspection.</p>
+        </article>
+        <article id="privacy" class="scroll-mt-28 rounded-3xl border border-slate-200 p-7">
+          <h3 class="flex items-center gap-2 text-lg font-extrabold"><i data-lucide="lock" class="h-5 w-5 text-brand-600" aria-hidden="true"></i> Privacy policy</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">This demo stores your cart, wishlist and preferences only in your own browser (localStorage). No personal data is sent to a server, and no payment details are ever requested.</p>
+        </article>
+        <article id="terms" class="scroll-mt-28 rounded-3xl border border-slate-200 p-7">
+          <h3 class="flex items-center gap-2 text-lg font-extrabold"><i data-lucide="file-text" class="h-5 w-5 text-brand-600" aria-hidden="true"></i> Terms of service</h3>
+          <p class="mt-3 text-sm leading-relaxed text-slate-600">Lumora is a frontend demonstration. Products, prices, reviews and orders are samples; placing an order does not create a purchase or a payment obligation.</p>
+        </article>
+      </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="container pb-16 lg:pb-24" aria-labelledby="about-cta-title">
+      <div class="rounded-4xl bg-brand-600 px-6 py-14 text-center text-white sm:px-12 sm:py-20">
+        <h2 id="about-cta-title" class="text-balance text-3xl font-extrabold tracking-tight sm:text-5xl">Ready to find something you'll love?</h2>
+        <p class="mx-auto mt-4 max-w-xl text-lg text-brand-100">Explore our curated collection — free shipping over ₹999 and 30-day returns on everything.</p>
+        <a href="products.html" class="btn btn-light btn-lg mt-8">Shop the collection <i data-lucide="arrow-right" class="h-5 w-5" aria-hidden="true"></i></a>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

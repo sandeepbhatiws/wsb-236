@@ -1,0 +1,39 @@
+*{
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+}
+
+body{
+    font-family: "Valley Sans", sans-serif;
+}
+
+.row{
+    max-width: 1400px;
+    border: 2px solid black;
+    margin: auto;
+    padding: 15px;
+    display: grid;
+    gap: 15px;
+    grid-template-columns: 200px 600px 200px;
+    grid-template-columns: auto auto auto;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: repeat(3, 2fr);
+    justify-content: space-between;
+    align-items: flex-end;
+    align-items: center;
+
+    /* grid-row-gap: 30px;
+    grid-column-gap: 50px; */
+}
+
+.column{
+    border: 2px solid red;
+    padding: 15px;
+    border-radius: 15px;
+}

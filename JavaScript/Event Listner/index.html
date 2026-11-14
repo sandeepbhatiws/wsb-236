@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+
+    <div class="max-w-7xl m-auto rounded-2xl p-5 mt-8">
+        <button class="border p-5 add-class">Add Class</button>
+        <button class="border p-5 remove-class">Remove Class</button>
+        <button class="border p-5 toggle-class">Toggle Class</button>
+    </div>
+    
+    <div class="max-w-7xl border m-auto rounded-2xl p-5 mt-8" id="row">
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt dolorum debitis aperiam fugiat quidem voluptas, fuga dolores quaerat quos vitae officia. Doloribus laboriosam enim facere id fugit a. Provident, assumenda.
+    </div>
+
+
+    <script>
+        document.querySelector('.add-class').addEventListener('click', (event) => {
+            document.getElementById('row').classList.add('bg-red-500');
+            document.getElementById('row').classList.add('text-white');
+        })
+
+        document.querySelector('.remove-class').addEventListener('click', (event) => {
+            document.getElementById('row').classList.remove('bg-red-500');
+            document.getElementById('row').classList.remove('text-white');
+        })
+
+        document.querySelector('.toggle-class').addEventListener('click', (event) => {
+            document.getElementById('row').classList.toggle('bg-red-500');
+            document.getElementById('row').classList.toggle('text-white');
+        })
+
+
+        // const getData = () => {
+        //     console.log('Hello')
+        // }
+
+        // document.getElementById('row').addEventListener('mouseover', getData);
+
+        // document.getElementById('row').addEventListener('mouseover', (e) => {
+        //     console.log(e.target)
+
+        //     e.target.innerText = 'Lorem ipsum dolor sit amet consectetur, adipisicing elit. Nesciunt dolorum debitis aperiam fugiat quidem voluptas, fuga dolores quaerat quos vitae officia.';
+
+        //     e.target.style.backgroundColor = 'red';
+        //     e.target.style.color = 'white';
+        // });
+    </script>
+</body>
+</html>

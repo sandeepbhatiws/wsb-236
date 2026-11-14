@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="max-w-7xl m-auto mt-9" id="main">
+        <div class="row border p-4 rounded-2xl mb-4" id="row">
+            1. Lorem ipsum dolor sit amet consectetur adipisicing elit. A sapiente ducimus ab laborum voluptatum consequuntur quis ut, quia repellendus ad ratione neque velit rerum vero, dolorum similique praesentium, debitis labore.
+        </div>
+    </div>
+
+    <div class="max-w-7xl m-auto mt-9 flex gap-4 justify-center">
+        <button class="border py-3 px-6 rounded-2xl cursor-pointer" onclick="colorChange()">Color Change</button>
+    </div>
+
+
+    <script>
+        const colorChange = () => {
+            document.getElementById('row').style.backgroundColor = 'red';
+            document.getElementById('row').style.color = 'white';
+        }
+    </script>
+</body>
+</html>

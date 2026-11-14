@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Your Cart — Lumora</title>
+  <meta name="description" content="Review the items in your Lumora shopping cart, apply a coupon and proceed to secure checkout.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="cart">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <section class="border-b border-slate-200 bg-slate-50">
+      <div class="container py-8 lg:py-10">
+        <nav aria-label="Breadcrumb">
+          <ol class="flex flex-wrap items-center gap-1.5 text-sm text-slate-500">
+            <li><a href="index.html" class="hover:text-slate-900">Home</a></li>
+            <li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li class="font-semibold text-slate-900" aria-current="page">Cart</li>
+          </ol>
+        </nav>
+        <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl">Your cart <span class="text-slate-400" id="cart-heading-count"></span></h1>
+      </div>
+    </section>
+
+    <div class="container py-8 lg:py-12">
+      <!-- Cart with items -->
+      <div class="grid gap-10 lg:grid-cols-[minmax(0,1fr)_24rem] lg:gap-12" id="cart-content" hidden>
+        <section aria-labelledby="cart-items-title">
+          <h2 id="cart-items-title" class="sr-only" tabindex="-1">Items in your cart</h2>
+
+          <!-- Free shipping progress -->
+          <div class="rounded-2xl bg-brand-50 p-4" id="shipping-progress"></div>
+
+          <ul class="divide-y divide-slate-200 border-b border-slate-200" id="cart-items"></ul>
+
+          <div class="mt-6 flex flex-wrap items-center justify-between gap-3">
+            <a href="products.html" class="btn btn-outline"><i data-lucide="arrow-left" class="h-4 w-4" aria-hidden="true"></i> Continue shopping</a>
+            <button type="button" class="btn btn-ghost-danger" id="clear-cart"><i data-lucide="trash-2" class="h-4 w-4" aria-hidden="true"></i> Clear cart</button>
+          </div>
+        </section>
+
+        <aside aria-labelledby="summary-title">
+          <div class="rounded-3xl border border-slate-200 bg-white p-6 shadow-soft lg:sticky lg:top-28">
+            <h2 id="summary-title" class="text-xl font-extrabold">Order summary</h2>
+
+            <!-- Coupon -->
+            <form class="mt-5" id="coupon-form" novalidate>
+              <label for="coupon-code" class="form-label">Coupon code</label>
+              <div class="flex gap-2">
+                <input id="coupon-code" name="coupon" class="form-input uppercase" placeholder="e.g. SAVE10" autocomplete="off" aria-describedby="coupon-msg coupon-hint">
+                <button type="submit" class="btn btn-dark shrink-0">Apply</button>
+              </div>
+              <p id="coupon-msg" class="form-message" role="status" aria-live="polite"></p>
+              <p id="coupon-hint" class="mt-2 text-xs text-slate-500">Demo codes: <strong>SAVE10</strong>, <strong>WELCOME200</strong>, <strong>FREESHIP</strong></p>
+            </form>
+            <div id="applied-coupon" class="mt-4" hidden></div>
+
+            <dl class="mt-6 space-y-3 border-t border-slate-200 pt-6 text-sm" id="summary-lines"></dl>
+
+            <a href="checkout.html" class="btn btn-primary btn-lg btn-block mt-6" id="checkout-btn">
+              <i data-lucide="lock" class="h-4 w-4" aria-hidden="true"></i> Proceed to checkout
+            </a>
+            <ul class="mt-5 space-y-2 text-xs text-slate-500">
+              <li class="flex items-center gap-2"><i data-lucide="shield-check" class="h-4 w-4 text-emerald-600" aria-hidden="true"></i> Secure demo checkout — no real payment is taken</li>
+              <li class="flex items-center gap-2"><i data-lucide="rotate-ccw" class="h-4 w-4 text-emerald-600" aria-hidden="true"></i> 30-day easy returns</li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Empty cart -->
+      <div class="mx-auto max-w-md py-10 text-center" id="cart-empty" hidden>
+        <img src="assets/images/empty-cart.svg" alt="" class="mx-auto h-48 w-48" width="192" height="192">
+        <h2 class="mt-6 text-2xl font-extrabold" tabindex="-1">Your cart is empty</h2>
+        <p class="mt-2 text-slate-600">Looks like you haven't added anything yet. Explore our best sellers and new arrivals to get started.</p>
+        <div class="mt-8 flex flex-wrap justify-center gap-3">
+          <a href="products.html" class="btn btn-primary btn-lg">Start shopping</a>
+          <button type="button" class="btn btn-outline btn-lg" data-wishlist-open>View wishlist</button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Recommended -->
+    <section class="bg-slate-50 py-14 lg:py-20" aria-labelledby="recommended-title">
+      <div class="container">
+        <h2 id="recommended-title" class="text-2xl font-extrabold tracking-tight sm:text-3xl">Recommended for you</h2>
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="recommended-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/cart.js"></script>
+</body>
+</html>

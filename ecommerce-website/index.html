@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Lumora — Everyday Essentials, Beautifully Made</title>
+  <meta name="description" content="Shop thoughtfully chosen electronics, fashion, accessories, home goods and beauty at Lumora. Free shipping over ₹499 and 30-day easy returns.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="home">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <!-- Hero -->
+    <section class="hero-gradient overflow-hidden">
+      <div class="container grid items-center gap-12 py-12 sm:py-16 lg:grid-cols-2 lg:gap-16 lg:py-24">
+        <div class="fade-in">
+          <p class="inline-flex items-center gap-2 rounded-full bg-white px-3 py-1.5 text-xs font-bold uppercase tracking-wider text-brand-700 shadow-soft">
+            <i data-lucide="sparkles" class="h-3.5 w-3.5" aria-hidden="true"></i> New season edit · Autumn 2026
+          </p>
+          <h1 class="text-balance mt-6 text-4xl font-extrabold leading-[1.08] tracking-tight sm:text-5xl lg:text-6xl">
+            Everyday essentials, <span class="text-brand-600">beautifully made.</span>
+          </h1>
+          <p class="mt-6 max-w-xl text-lg leading-relaxed text-slate-600">
+            Discover audio, accessories, home pieces and beauty rituals chosen for quality that lasts — with free shipping over ₹499 and easy 30-day returns.
+          </p>
+          <div class="mt-8 flex flex-wrap gap-3">
+            <a href="products.html" class="btn btn-primary btn-lg">Shop Now <i data-lucide="arrow-right" class="h-5 w-5" aria-hidden="true"></i></a>
+            <a href="products.html?sort=newest" class="btn btn-outline btn-lg">New arrivals</a>
+          </div>
+          <dl class="mt-10 flex flex-wrap gap-x-10 gap-y-4">
+            <div>
+              <dt class="text-sm text-slate-500">Customer rating</dt>
+              <dd class="flex items-center gap-2 text-lg font-extrabold"><span class="stars" style="--rating:4.8" aria-hidden="true"></span> 4.8/5</dd>
+            </div>
+            <div>
+              <dt class="text-sm text-slate-500">Happy customers</dt>
+              <dd class="text-lg font-extrabold">120k+ <span class="text-xs font-medium text-slate-400">(sample)</span></dd>
+            </div>
+          </dl>
+        </div>
+
+        <div class="relative fade-in">
+          <div class="relative overflow-hidden rounded-4xl shadow-lift">
+            <img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?auto=format&fit=crop&w=1100&q=80"
+              alt="Smiling shopper carrying colourful shopping bags" class="aspect-[4/5] w-full object-cover sm:aspect-[5/4] lg:aspect-[4/5]" width="1100" height="1375" fetchpriority="high">
+          </div>
+          <!-- Floating product card -->
+          <a href="product-details.html?id=101" class="absolute -bottom-6 left-4 flex items-center gap-3 rounded-2xl bg-white p-3 pr-5 shadow-lift transition hover:-translate-y-0.5 sm:left-auto sm:right-6">
+            <img src="https://images.unsplash.com/photo-1505740420928-5e560c06d30e?auto=format&fit=crop&w=160&q=80" alt="" class="h-14 w-14 rounded-xl object-cover" width="56" height="56">
+            <span>
+              <span class="block text-xs font-semibold text-slate-500">Bestseller</span>
+              <span class="block text-sm font-bold">Aurora Wireless Headphones</span>
+              <span class="block text-sm font-extrabold text-brand-600">₹4,499 <span class="font-medium text-slate-400 line-through">₹7,499</span></span>
+            </span>
+          </a>
+          <div class="absolute -top-4 right-4 hidden rounded-2xl bg-slate-900 px-4 py-3 text-white shadow-lift sm:block">
+            <p class="text-xs text-slate-300">Up to</p>
+            <p class="text-2xl font-extrabold leading-none">40% off</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Categories -->
+    <section class="container py-16 lg:py-24" aria-labelledby="categories-title">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Browse</p>
+          <h2 id="categories-title" class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Shop by category</h2>
+        </div>
+        <a href="products.html" class="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-brand-600">All products <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></a>
+      </div>
+      <div class="mt-8 grid grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-6" id="category-grid"></div>
+    </section>
+
+    <!-- Best sellers -->
+    <section class="bg-slate-50 py-16 lg:py-24" aria-labelledby="bestsellers-title">
+      <div class="container">
+        <div class="flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Customer favourites</p>
+            <h2 id="bestsellers-title" class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Best sellers</h2>
+          </div>
+          <a href="products.html?sort=bestselling" class="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-brand-600">Shop best sellers <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></a>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="bestseller-grid"></div>
+      </div>
+    </section>
+
+    <!-- New arrivals -->
+    <section class="container py-16 lg:py-24" aria-labelledby="new-title">
+      <div class="flex flex-wrap items-end justify-between gap-4">
+        <div>
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Just landed</p>
+          <h2 id="new-title" class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">New arrivals</h2>
+        </div>
+        <a href="products.html?sort=newest" class="inline-flex items-center gap-1 font-bold text-slate-900 hover:text-brand-600">See what's new <i data-lucide="arrow-right" class="h-4 w-4" aria-hidden="true"></i></a>
+      </div>
+      <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="new-arrivals-grid"></div>
+    </section>
+
+    <!-- Special offers -->
+    <section class="container pb-16 lg:pb-24" aria-labelledby="offers-title">
+      <div class="rounded-4xl bg-rose-50 p-6 sm:p-10">
+        <div class="flex flex-wrap items-end justify-between gap-6">
+          <div>
+            <p class="inline-flex items-center gap-2 text-sm font-bold uppercase tracking-wider text-rose-600"><i data-lucide="badge-percent" class="h-4 w-4" aria-hidden="true"></i> Limited-time deals</p>
+            <h2 id="offers-title" class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Special offers</h2>
+            <p class="mt-2 text-slate-600">Our biggest markdowns of the week — while stocks last.</p>
+          </div>
+          <div class="flex items-center gap-3" aria-live="off">
+            <span class="text-sm font-semibold text-slate-600">Deals end in</span>
+            <div class="flex gap-1.5 font-extrabold tabular-nums" id="offer-countdown" role="timer" aria-label="Time left on today's deals">
+              <span class="rounded-lg bg-slate-900 px-2.5 py-1.5 text-white" data-unit="h">00</span>
+              <span class="py-1.5">:</span>
+              <span class="rounded-lg bg-slate-900 px-2.5 py-1.5 text-white" data-unit="m">00</span>
+              <span class="py-1.5">:</span>
+              <span class="rounded-lg bg-slate-900 px-2.5 py-1.5 text-white" data-unit="s">00</span>
+            </div>
+          </div>
+        </div>
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="offers-grid"></div>
+      </div>
+    </section>
+
+    <!-- Promotional banner -->
+    <section class="container pb-16 lg:pb-24" aria-labelledby="promo-title">
+      <div class="relative overflow-hidden rounded-4xl bg-slate-900 text-white">
+        <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?auto=format&fit=crop&w=1600&q=80" alt=""
+          class="absolute inset-0 h-full w-full object-cover opacity-40" loading="lazy">
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-950 via-slate-950/70 to-transparent"></div>
+        <div class="relative max-w-xl px-6 py-14 sm:px-12 sm:py-20">
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-300">The Home Edit</p>
+          <h2 id="promo-title" class="text-balance mt-3 text-3xl font-extrabold leading-tight sm:text-5xl">Make your space feel like you.</h2>
+          <p class="mt-4 text-lg text-slate-300">Up to 25% off lounge chairs, lighting, planters and tableware. Use <strong class="text-white">WELCOME200</strong> for an extra ₹200 off orders above ₹1,499.</p>
+          <a href="products.html?category=Home%20%26%20Living" class="btn btn-light btn-lg mt-8">Shop Home &amp; Living <i data-lucide="arrow-right" class="h-5 w-5" aria-hidden="true"></i></a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="bg-slate-50 py-16 lg:py-24" aria-labelledby="testimonials-title">
+      <div class="container">
+        <div class="mx-auto max-w-2xl text-center">
+          <p class="text-sm font-bold uppercase tracking-wider text-brand-600">Reviews</p>
+          <h2 id="testimonials-title" class="mt-2 text-3xl font-extrabold tracking-tight sm:text-4xl">Loved by shoppers across India</h2>
+          <p class="mt-3 flex items-center justify-center gap-2 text-slate-600"><span class="stars" style="--rating:4.8" aria-hidden="true"></span> 4.8 average from sample reviews</p>
+        </div>
+        <div class="mt-10 grid gap-6 md:grid-cols-3">
+          <figure class="flex flex-col rounded-3xl bg-white p-7 shadow-soft">
+            <span class="stars" style="--rating:5" role="img" aria-label="Rated 5 out of 5"></span>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-slate-700">“The Aurora headphones sound incredible and arrived in two days. Packaging felt like opening a gift. Already planning my next order.”</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?auto=format&fit=crop&w=120&q=80" alt="" class="h-11 w-11 rounded-full object-cover" loading="lazy" width="44" height="44">
+              <span><span class="block font-bold">Aisha Kapoor</span><span class="block text-sm text-slate-500">Verified buyer · Mumbai</span></span>
+            </figcaption>
+          </figure>
+          <figure class="flex flex-col rounded-3xl bg-white p-7 shadow-soft">
+            <span class="stars" style="--rating:5" role="img" aria-label="Rated 5 out of 5"></span>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-slate-700">“Returned a jacket size with zero hassle — the pickup was scheduled the next day and the refund came through quickly. That's how it should be.”</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=120&q=80" alt="" class="h-11 w-11 rounded-full object-cover" loading="lazy" width="44" height="44">
+              <span><span class="block font-bold">Rohan Mehta</span><span class="block text-sm text-slate-500">Verified buyer · Pune</span></span>
+            </figcaption>
+          </figure>
+          <figure class="flex flex-col rounded-3xl bg-white p-7 shadow-soft">
+            <span class="stars" style="--rating:4.5" role="img" aria-label="Rated 4.5 out of 5"></span>
+            <blockquote class="mt-4 flex-1 leading-relaxed text-slate-700">“My go-to for gifts now. The Oslo chair is the most-complimented thing in my living room, and support answered my questions within an hour.”</blockquote>
+            <figcaption class="mt-6 flex items-center gap-3">
+              <img src="https://images.unsplash.com/photo-1438761681033-6461ffad8d80?auto=format&fit=crop&w=120&q=80" alt="" class="h-11 w-11 rounded-full object-cover" loading="lazy" width="44" height="44">
+              <span><span class="block font-bold">Neha Sharma</span><span class="block text-sm text-slate-500">Verified buyer · Bengaluru</span></span>
+            </figcaption>
+          </figure>
+        </div>
+        <p class="mt-6 text-center text-xs text-slate-400">Testimonials are sample content for this demo store.</p>
+      </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="container py-16 lg:py-24" aria-labelledby="newsletter-title">
+      <div class="relative overflow-hidden rounded-4xl bg-brand-600 px-6 py-12 text-white sm:px-12 sm:py-16">
+        <div class="pointer-events-none absolute -right-24 -top-24 h-72 w-72 rounded-full bg-white/10"></div>
+        <div class="pointer-events-none absolute -bottom-32 left-1/3 h-72 w-72 rounded-full bg-white/5"></div>
+        <div class="relative grid items-center gap-8 lg:grid-cols-2">
+          <div>
+            <h2 id="newsletter-title" class="text-3xl font-extrabold tracking-tight sm:text-4xl">Get 10% off your first order</h2>
+            <p class="mt-3 text-lg text-brand-100">Join our newsletter for early access to new drops, restocks and members-only offers.</p>
+          </div>
+          <form data-newsletter-form novalidate class="on-dark">
+            <label for="newsletter-home" class="mb-2 block text-sm font-semibold text-brand-100">Email address</label>
+            <div class="flex flex-col gap-3 sm:flex-row">
+              <input id="newsletter-home" type="email" name="email" autocomplete="email" placeholder="you@example.com" class="form-input !border-transparent" aria-describedby="newsletter-home-msg" required>
+              <button type="submit" class="btn btn-dark btn-lg shrink-0">Subscribe</button>
+            </div>
+            <p id="newsletter-home-msg" class="form-message" role="status" aria-live="polite"></p>
+            <p class="mt-3 text-xs text-brand-200">By subscribing you agree to our <a href="about.html#privacy" class="underline hover:text-white">privacy policy</a>. Unsubscribe anytime.</p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <!-- Brand benefits -->
+    <section class="border-t border-slate-200" aria-label="Why shop with Lumora">
+      <ul class="container grid grid-cols-1 gap-8 py-12 sm:grid-cols-2 lg:grid-cols-4">
+        <li class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600"><i data-lucide="shield-check" class="h-6 w-6" aria-hidden="true"></i></span>
+          <span><span class="block font-bold">Secure payments</span><span class="mt-1 block text-sm text-slate-500">Encrypted checkout with trusted payment partners.</span></span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600"><i data-lucide="truck" class="h-6 w-6" aria-hidden="true"></i></span>
+          <span><span class="block font-bold">Fast delivery</span><span class="mt-1 block text-sm text-slate-500">Free shipping over ₹499, express options available.</span></span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600"><i data-lucide="rotate-ccw" class="h-6 w-6" aria-hidden="true"></i></span>
+          <span><span class="block font-bold">Easy returns</span><span class="mt-1 block text-sm text-slate-500">30-day returns with free doorstep pickup.</span></span>
+        </li>
+        <li class="flex items-start gap-4">
+          <span class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-brand-50 text-brand-600"><i data-lucide="headphones" class="h-6 w-6" aria-hidden="true"></i></span>
+          <span><span class="block font-bold">Customer support</span><span class="mt-1 block text-sm text-slate-500">Real people, 7 days a week, 9am–9pm IST.</span></span>
+        </li>
+      </ul>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/home.js"></script>
+</body>
+</html>

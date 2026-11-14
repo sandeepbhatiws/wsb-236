@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="w-[450px] m-auto mt-9 flex justify-center flex-wrap">
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">1</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">2</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">3</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">4</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">5</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">6</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">7</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">8</div>
+        <div class="border w-[150px] h-[150px] text-center pt-14 font-bold text-2xl" onmouseover="changeColor(this)" onmouseout="defaultColor(this)">9</div>
+    </div>
+
+    <script>
+        var numbers = [];
+
+        const changeColor = (i) => {
+            if(numbers.length < 9){
+                i.style.backgroundColor = 'red';
+            }
+
+            if(!numbers.includes(i.innerText)){
+                numbers.push(i.innerText);
+            }
+        }
+
+        const defaultColor = (i) => {
+            i.style.backgroundColor = 'white';
+        }
+    </script>
+</body>
+</html>

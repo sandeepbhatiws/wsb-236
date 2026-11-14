@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop All Products — Lumora</title>
+  <meta name="description" content="Browse Lumora's full catalog of electronics, fashion, footwear, accessories, home goods and beauty. Filter by category, price, rating and availability.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="shop">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <!-- Page heading -->
+    <section class="hero-gradient border-b border-slate-200">
+      <div class="container py-8 lg:py-12">
+        <nav aria-label="Breadcrumb">
+          <ol class="flex flex-wrap items-center gap-1.5 text-sm text-slate-500">
+            <li><a href="index.html" class="hover:text-slate-900">Home</a></li>
+            <li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li><a href="products.html" class="hover:text-slate-900" id="breadcrumb-shop">Shop</a></li>
+            <li aria-hidden="true" id="breadcrumb-sep" hidden><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+            <li id="breadcrumb-current" class="font-semibold text-slate-900" aria-current="page" hidden></li>
+          </ol>
+        </nav>
+        <h1 class="mt-4 text-3xl font-extrabold tracking-tight sm:text-4xl" id="listing-title">Shop all products</h1>
+        <p class="mt-2 max-w-2xl text-slate-600" id="listing-description">Thoughtfully chosen essentials across six categories. Use the filters to find exactly what you're looking for.</p>
+      </div>
+    </section>
+
+    <div class="container py-8 lg:py-12">
+      <div class="lg:grid lg:grid-cols-[15.5rem_minmax(0,1fr)] lg:gap-10">
+        <!-- Filters: sidebar on desktop, slide-in drawer on mobile -->
+        <div class="filters-backdrop" data-filters-close hidden></div>
+        <aside id="filters" class="filters-panel" aria-labelledby="filters-title">
+          <div class="mb-6 flex items-center justify-between">
+            <h2 id="filters-title" class="text-lg font-extrabold">Filters</h2>
+            <button type="button" class="icon-btn lg:hidden" data-filters-close aria-label="Close filters"><i data-lucide="x" class="h-5 w-5" aria-hidden="true"></i></button>
+            <button type="button" class="hidden text-sm font-semibold text-brand-600 hover:underline lg:inline" data-clear-filters>Clear all</button>
+          </div>
+
+          <form id="filter-form" class="space-y-8" novalidate>
+            <div>
+              <label for="filter-search" class="form-label">Search</label>
+              <div class="relative">
+                <i data-lucide="search" class="pointer-events-none absolute left-3.5 top-1/2 h-[18px] w-[18px] -translate-y-1/2 text-slate-400" aria-hidden="true"></i>
+                <input id="filter-search" type="search" class="search-input" placeholder="Name, brand or category" autocomplete="off">
+              </div>
+            </div>
+
+            <fieldset>
+              <legend class="form-label">Category</legend>
+              <div class="mt-1 space-y-2.5" id="category-filters"></div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="form-label">Price range</legend>
+              <div class="mt-2 grid grid-cols-2 gap-3">
+                <div>
+                  <label for="price-min" class="mb-1 block text-xs font-semibold text-slate-500">Min (₹)</label>
+                  <input id="price-min" type="number" inputmode="numeric" min="0" step="100" class="form-input !min-h-[2.5rem] !py-2" value="0">
+                </div>
+                <div>
+                  <label for="price-max" class="mb-1 block text-xs font-semibold text-slate-500">Max (₹)</label>
+                  <input id="price-max" type="number" inputmode="numeric" min="0" step="100" class="form-input !min-h-[2.5rem] !py-2">
+                </div>
+              </div>
+              <label for="price-range" class="sr-only">Maximum price</label>
+              <input id="price-range" type="range" class="range mt-5" min="0" step="100">
+              <p class="mt-2 text-xs font-medium text-slate-500" id="price-range-label"></p>
+            </fieldset>
+
+            <fieldset>
+              <legend class="form-label">Customer rating</legend>
+              <div class="mt-1 space-y-2.5">
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="radio" name="rating" value="0" class="check-input" checked> Any rating</label>
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="radio" name="rating" value="4.5" class="check-input"> <span class="stars" style="--rating:4.5" aria-hidden="true"></span> 4.5 &amp; up</label>
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="radio" name="rating" value="4" class="check-input"> <span class="stars" style="--rating:4" aria-hidden="true"></span> 4.0 &amp; up</label>
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="radio" name="rating" value="3" class="check-input"> <span class="stars" style="--rating:3" aria-hidden="true"></span> 3.0 &amp; up</label>
+              </div>
+            </fieldset>
+
+            <fieldset>
+              <legend class="form-label">Availability</legend>
+              <div class="mt-1 space-y-2.5">
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="checkbox" id="filter-instock" class="check-input"> In stock only</label>
+                <label class="flex cursor-pointer items-center gap-3 text-sm font-medium"><input type="checkbox" id="filter-sale" class="check-input"> On sale</label>
+              </div>
+            </fieldset>
+
+            <button type="button" class="btn btn-outline btn-block" data-clear-filters>Reset all filters</button>
+          </form>
+
+          <div class="sticky bottom-0 -mx-5 mt-6 border-t border-slate-200 bg-white p-5 lg:hidden">
+            <button type="button" class="btn btn-primary btn-block" data-filters-close id="show-results-btn">Show results</button>
+          </div>
+        </aside>
+
+        <!-- Results -->
+        <section aria-labelledby="results-heading">
+          <h2 id="results-heading" class="sr-only">Products</h2>
+          <div class="flex flex-wrap items-center justify-between gap-3 border-b border-slate-200 pb-4">
+            <div class="flex items-center gap-3">
+              <button type="button" class="btn btn-outline btn-sm lg:hidden" id="open-filters" aria-controls="filters" aria-expanded="false">
+                <i data-lucide="sliders-horizontal" class="h-4 w-4" aria-hidden="true"></i> Filters <span class="rounded-full bg-brand-600 px-1.5 text-xs text-white" id="filter-count" hidden></span>
+              </button>
+              <p class="text-sm text-slate-600" id="result-count" aria-live="polite">Loading products…</p>
+            </div>
+            <div class="flex items-center gap-2">
+              <label for="sort-select" class="whitespace-nowrap text-sm font-semibold text-slate-600">Sort by</label>
+              <select id="sort-select" class="form-input !min-h-[2.5rem] !w-auto !py-2 text-sm">
+                <option value="featured">Featured</option>
+                <option value="newest">Newest</option>
+                <option value="price-asc">Price: Low to High</option>
+                <option value="price-desc">Price: High to Low</option>
+                <option value="rating">Highest Rated</option>
+                <option value="bestselling">Best Selling</option>
+              </select>
+            </div>
+          </div>
+
+          <!-- Active filter chips -->
+          <div class="mt-4 flex flex-wrap gap-2" id="active-filters" aria-label="Active filters"></div>
+
+          <div class="mt-6 grid grid-cols-1 gap-x-4 gap-y-10 min-[400px]:grid-cols-2 lg:gap-x-6 xl:grid-cols-3" id="product-grid" aria-busy="true"></div>
+
+          <!-- No results -->
+          <div class="mt-6 hidden rounded-3xl border border-dashed border-slate-300 px-6 py-16 text-center" id="no-results">
+            <span class="mx-auto flex h-16 w-16 items-center justify-center rounded-full bg-slate-100 text-slate-500"><i data-lucide="search-x" class="h-7 w-7" aria-hidden="true"></i></span>
+            <h3 class="mt-4 text-lg font-extrabold">No products match your filters</h3>
+            <p class="mx-auto mt-1 max-w-sm text-slate-500">Try removing a filter, widening the price range or searching for something else.</p>
+            <button type="button" class="btn btn-primary mt-6" data-clear-filters>Clear all filters</button>
+          </div>
+
+          <!-- Load more -->
+          <div class="mt-12 flex flex-col items-center gap-3" id="load-more-wrap" hidden>
+            <p class="text-sm text-slate-500" id="load-more-progress"></p>
+            <div class="h-1 w-48 overflow-hidden rounded-full bg-slate-200"><div class="h-full rounded-full bg-slate-900 transition-all" id="load-more-bar"></div></div>
+            <button type="button" class="btn btn-outline mt-2" id="load-more">Load more products</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product-listing.js"></script>
+</body>
+</html>

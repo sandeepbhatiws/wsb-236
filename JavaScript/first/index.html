@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    
+    <div class="m-9">
+        <button onclick="alert('Welcome to WS')" class="bg-black text-white py-3 px-4 rounded-xl">Click Me</button>
+
+        <button onclick="readMore()" class="bg-black text-white py-3 px-4 rounded-xl">Read More</button>
+
+        <button onclick="getValue()" class="bg-black text-white py-3 px-4 rounded-xl">Prompt</button>
+
+        <button onclick="getConfirmation()" class="bg-black text-white py-3 px-4 rounded-xl">Confirm</button>
+    </div>
+
+
+    <script>
+        var a = 5;
+        var a = 10;
+        a = 15;
+
+        let b = 32;
+        b = 45;
+
+        const c = 25
+        c = 30
+
+        console.log(c);
+
+
+
+        function getConfirmation(){
+            console.log(confirm("Are you sure you want to delete ?"))            
+        }
+
+        function getValue(){
+            console.log(prompt('Enter your name'));
+        }
+
+        function readMore(){
+            console.log('Read More');
+        }
+
+        document.write('<center class="p-4">Welcome to WS</center>');
+        document.write('<hr>')
+    </script>
+
+</body>
+</html>

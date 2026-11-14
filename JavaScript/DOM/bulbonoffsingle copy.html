@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+<body>
+    <div class="max-w-7xl m-auto mt-9 flex justify-center">
+        <div class="border p-6 rounded-2xl mb-4">
+            <img src="images/off.gif" class="w-[200px]" id="image"/>
+        </div>
+    </div>
+
+    <div class="max-w-7xl m-auto mt-9 flex gap-4 justify-center">
+        <button class="border py-3 px-6 rounded-2xl cursor-pointer" onclick="changeImage('images/on.gif')">On</button>
+        <button class="border py-3 px-6 rounded-2xl cursor-pointer" onclick="changeImage('images/off.gif')">Off</button>
+    </div>
+
+    <script>
+        const changeImage = (i) => {
+            document.getElementById('image').src = i;
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form Handling</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body>
+    <div class="max-w-7xl m-auto">
+
+        <!-- Start User Enquiry Section -->
+        <section class="min-h-screen">
+            <div class="mx-auto flex min-h-screen flex-col items-center justify-center px-6 py-8">
+
+                <!-- Logo -->
+                <a href="#" class="mb-6 flex items-center text-2xl font-semibold text-gray-900 dark:text-white">
+                    <img class="mr-2" src="images/logo.svg" alt="Flowbite logo" />
+                </a>
+
+                <!-- Sign-in card -->
+                <div
+                    class="w-full rounded-lg border border-gray-200 bg-white shadow-sm sm:max-w-md dark:border-gray-700 dark:bg-gray-800">
+                    <div class="space-y-4 p-6 sm:p-8 md:space-y-6">
+                        <h1
+                            class="text-xl leading-tight font-bold tracking-tight text-gray-900 md:text-2xl dark:text-white text-center mb-7">
+                            Contact Enquiry
+                        </h1>
+
+                        <form class="space-y-4 md:space-y-6" id="form-handler">
+
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    Your Name
+                                </label>
+
+                                <input type="text" name="name" id="name" autocomplete="off"
+                                    placeholder="Enter your Name" required
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" />
+                            </div>
+
+                            <!-- Email -->
+                            <div>
+                                <label for="email" class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    Your email
+                                </label>
+
+                                <input type="email" name="email" id="email" autocomplete="off"
+                                    placeholder="name@company.com" required
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" />
+                            </div>
+
+                            <!-- Mobile Number -->
+                            <div>
+                                <label for="mobile_number"
+                                    class="mb-2 block text-sm font-medium text-gray-900 dark:text-white">
+                                    Mobile Number
+                                </label>
+
+                                <input type="text" name="mobile_number" id="mobile_number" autocomplete="off"
+                                    placeholder="Enter Your Mobile Number" required
+                                    class="block w-full rounded-lg border border-gray-300 bg-gray-50 p-2.5 text-sm text-gray-900 placeholder-gray-400 focus:border-blue-500 focus:ring-2 focus:ring-blue-500 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400" />
+                            </div>
+
+                            <div>
+                                <label for="country" class="block mb-2.5 text-sm font-medium text-heading">Select
+                                    Country</label>
+                                <select id="country" name="country"
+                                    class="block w-full px-3 py-2.5 border border-gray-300 text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder-gray-400">
+                                    <option>Select Country</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="state" class="block mb-2.5 text-sm font-medium text-heading">Select
+                                    State</label>
+                                <select id="state" name="state"
+                                    class="block w-full px-3 py-2.5 border border-gray-300 text-heading text-sm rounded-base focus:ring-brand focus:border-brand shadow-xs placeholder:gray-300">
+                                    <option selected>Select State</option>
+                                </select>
+                            </div>
+
+                            <div>
+                                <label for="message" class="block mb-2.5 text-sm font-medium text-heading">Your
+                                    Message</label>
+                                <textarea name="message" id="message" rows="4"
+                                    class="bg-neutral-secondary-medium border border-gray-300 text-heading text-sm rounded-base focus:ring-brand focus:border-brand block w-full p-3.5 shadow-xs placeholder:text-body"
+                                    placeholder="Write your thoughts here..."></textarea>
+                            </div>
+
+                            <!-- Submit -->
+                            <button type="submit"
+                                class="w-full rounded-lg bg-blue-600 px-5 py-2.5 text-center text-sm font-medium text-white transition-colors hover:bg-blue-700 focus:outline-none focus:ring-4 focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                                Submit
+                            </button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End User Enquiry Section -->
+
+
+        <!-- Start User Table Section -->
+        <div class="mb-8">
+            <div class="pt-4 pb-10 text-center text-3xl font-medium">
+                <h1>User Information</h1>
+            </div>
+            <div
+                class="relative overflow-x-auto rounded-lg border border-gray-200 bg-white shadow-sm dark:border-gray-700 dark:bg-gray-800">
+                <table class="w-full text-left text-sm text-gray-500 rtl:text-right dark:text-gray-400">
+                    <thead
+                        class="border-b border-gray-200 bg-gray-50 text-xs text-gray-700 uppercase dark:border-gray-700 dark:bg-gray-700 dark:text-gray-400">
+                        <tr>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                S.No
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Email
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Mobile Number
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Country Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                State Name
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Message
+                            </th>
+                            <th scope="col" class="px-6 py-3 font-medium">
+                                Action
+                            </th>
+                        </tr>
+                    </thead>
+
+                    <tbody id="displayData">
+                        <!-- <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+                            <th scope="row"
+                                class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                1
+                            </th>
+                            <td class="px-6 py-4">Sandeep Bhati</td>
+                            <td class="px-6 py-4">sandeep.bhati@wscubetech.com</td>
+                            <td class="px-6 py-4">09876766666</td>
+                            <td class="px-6 py-4">India</td>
+                            <td class="px-6 py-4">Rajasthan</td>
+                            <td class="px-6 py-4">asdasdsa</td>
+                            <td class="px-6 py-4">
+                                <a onclick="deleteUser(0)"
+                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+                            <th scope="row"
+                                class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                2
+                            </th>
+                            <td class="px-6 py-4">Sandeep Bhati</td>
+                            <td class="px-6 py-4">sandeep.bhati@wscubetech.com</td>
+                            <td class="px-6 py-4">09876766666</td>
+                            <td class="px-6 py-4">India</td>
+                            <td class="px-6 py-4">Maharashtra</td>
+                            <td class="px-6 py-4">asdfsda</td>
+                            <td class="px-6 py-4">
+                                <a onclick="deleteUser(1)"
+                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+                            <th scope="row"
+                                class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                1
+                            </th>
+                            <td class="px-6 py-4">Sandeep Bhati</td>
+                            <td class="px-6 py-4">sandeep.bhati@wscubetech.com</td>
+                            <td class="px-6 py-4">09876766666</td>
+                            <td class="px-6 py-4">India</td>
+                            <td class="px-6 py-4">Rajasthan</td>
+                            <td class="px-6 py-4">asdasdsa</td>
+                            <td class="px-6 py-4">
+                                <a onclick="deleteUser(0)"
+                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Delete</a>
+                            </td>
+                        </tr>
+                        <tr class="odd:bg-white even:bg-gray-50 dark:odd:bg-gray-800 dark:even:bg-gray-700">
+                            <th scope="row"
+                                class="whitespace-nowrap px-6 py-4 font-medium text-gray-900 dark:text-white">
+                                2
+                            </th>
+                            <td class="px-6 py-4">Sandeep Bhati</td>
+                            <td class="px-6 py-4">sandeep.bhati@wscubetech.com</td>
+                            <td class="px-6 py-4">09876766666</td>
+                            <td class="px-6 py-4">India</td>
+                            <td class="px-6 py-4">Maharashtra</td>
+                            <td class="px-6 py-4">asdfsda</td>
+                            <td class="px-6 py-4">
+                                <a onclick="deleteUser(1)"
+                                    class="font-medium text-blue-600 hover:underline dark:text-blue-500">Delete</a>
+                            </td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <!-- End User Table Section -->
+
+
+    </div>
+
+
+    <script src="js/custom.js"></script>
+</body>
+
+</html>

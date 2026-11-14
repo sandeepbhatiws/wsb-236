@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Product Details — Lumora</title>
+  <meta name="description" content="Product details, specifications, reviews and delivery information at Lumora.">
+  <link rel="icon" href="assets/icons/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <!-- Tailwind Play CDN: fine for prototyping. Use the compiled build for production (see README). -->
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="js/tailwind-config.js"></script>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="https://unpkg.com/lucide@0.453.0/dist/umd/lucide.min.js" defer></script>
+</head>
+<body data-page="shop">
+  <a href="#main" class="skip-link">Skip to content</a>
+  <div data-component="header"></div>
+
+  <main id="main">
+    <div class="container py-6 lg:py-10">
+      <nav aria-label="Breadcrumb">
+        <ol class="flex flex-wrap items-center gap-1.5 text-sm text-slate-500" id="breadcrumb">
+          <li><a href="index.html" class="hover:text-slate-900">Home</a></li>
+          <li aria-hidden="true"><i data-lucide="chevron-right" class="h-4 w-4"></i></li>
+          <li><a href="products.html" class="hover:text-slate-900">Shop</a></li>
+        </ol>
+      </nav>
+
+      <!-- Product content is rendered here by js/product-details.js -->
+      <div id="product-root" class="mt-6" aria-busy="true">
+        <div class="grid gap-10 lg:grid-cols-2 lg:gap-14" aria-hidden="true">
+          <div>
+            <div class="skeleton aspect-square !rounded-3xl"></div>
+            <div class="mt-4 grid grid-cols-4 gap-3">
+              <div class="skeleton aspect-square"></div><div class="skeleton aspect-square"></div><div class="skeleton aspect-square"></div>
+            </div>
+          </div>
+          <div class="space-y-4">
+            <div class="skeleton h-4 w-24"></div>
+            <div class="skeleton h-9 w-3/4"></div>
+            <div class="skeleton h-4 w-40"></div>
+            <div class="skeleton h-10 w-48"></div>
+            <div class="skeleton h-24 w-full"></div>
+            <div class="skeleton h-12 w-full !rounded-full"></div>
+          </div>
+        </div>
+        <p class="sr-only">Loading product…</p>
+      </div>
+    </div>
+
+    <!-- Related & recently viewed -->
+    <section class="bg-slate-50 py-14 lg:py-20" aria-labelledby="related-title" id="related-section" hidden>
+      <div class="container">
+        <h2 id="related-title" class="text-2xl font-extrabold tracking-tight sm:text-3xl">You may also like</h2>
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="related-grid"></div>
+      </div>
+    </section>
+
+    <section class="py-14 lg:py-20" aria-labelledby="recent-title" id="recent-section" hidden>
+      <div class="container">
+        <h2 id="recent-title" class="text-2xl font-extrabold tracking-tight sm:text-3xl">Recently viewed</h2>
+        <div class="mt-8 grid grid-cols-2 gap-x-4 gap-y-10 lg:grid-cols-4 lg:gap-x-6" id="recent-grid"></div>
+      </div>
+    </section>
+  </main>
+
+  <div data-component="footer"></div>
+
+  <script src="js/products.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/product-details.js"></script>
+</body>
+</html>

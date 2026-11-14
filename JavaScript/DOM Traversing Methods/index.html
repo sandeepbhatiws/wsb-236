@@ -1,0 +1,223 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM Traversing Methods</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+</head>
+
+<body class="bg-slate-50 text-slate-800 antialiased">
+    <div class="max-w-7xl m-auto">
+
+        <!-- FAQ Section -->
+        <section class="px-4 py-16 sm:px-6 lg:px-8 lg:py-24">
+            <div class="grid gap-12 lg:grid-cols-12">
+
+                <!-- Left: Heading + Contact Card -->
+                <div class="lg:col-span-5">
+                    <span
+                        class="inline-flex items-center gap-2 rounded-full bg-indigo-100 px-4 py-1.5 text-sm font-semibold text-indigo-700">
+                        <span class="h-2 w-2 rounded-full bg-indigo-600"></span>
+                        FAQ
+                    </span>
+
+                    <h2 class="mt-5 text-4xl font-extrabold tracking-tight text-slate-900 sm:text-5xl">
+                        Frequently asked
+                        <span class="bg-linear-to-r from-indigo-600 to-violet-500 bg-clip-text text-transparent">
+                            questions
+                        </span>
+                    </h2>
+
+                    <p class="mt-5 max-w-md text-lg leading-relaxed text-slate-600">
+                        Everything you need to know about the course and how it works. Can't find the answer
+                        you're looking for? Our team is happy to help.
+                    </p>
+
+                    <!-- Contact Card -->
+                    <div
+                        class="mt-10 rounded-3xl bg-linear-to-br from-indigo-600 to-violet-600 p-8 text-white shadow-xl shadow-indigo-200">
+                        <div class="flex -space-x-3">
+                            <span
+                                class="flex h-11 w-11 items-center justify-center rounded-full bg-amber-400 text-sm font-bold text-amber-950 ring-4 ring-indigo-600">AK</span>
+                            <span
+                                class="flex h-11 w-11 items-center justify-center rounded-full bg-emerald-400 text-sm font-bold text-emerald-950 ring-4 ring-indigo-600">RS</span>
+                            <span
+                                class="flex h-11 w-11 items-center justify-center rounded-full bg-rose-400 text-sm font-bold text-rose-950 ring-4 ring-indigo-600">PM</span>
+                        </div>
+
+                        <h3 class="mt-6 text-xl font-bold">Still have questions?</h3>
+                        <p class="mt-2 text-indigo-100">
+                            Can't find the answer you're looking for? Chat with our friendly support team.
+                        </p>
+
+                        <a href="#"
+                            class="mt-6 inline-flex items-center gap-2 rounded-xl bg-white px-5 py-3 text-sm font-semibold text-indigo-700 transition hover:bg-indigo-50">
+                            Get in touch
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-4 w-4" fill="none" viewBox="0 0 24 24"
+                                stroke="currentColor" stroke-width="2.5">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Right: FAQ List -->
+                <div class="faq-list space-y-4 lg:col-span-7">
+
+                    <!-- FAQ Item 1 (shown in open state) -->
+                    <div 
+                        class="faq-item rounded-2xl border border-indigo-200 bg-white shadow-lg shadow-indigo-100 transition">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-indigo-600">01</span>
+                                <span class="text-lg font-semibold text-slate-900">What will I learn in this course?</span>
+                            </span>
+                            <div>
+                            <span
+                                class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            You'll learn modern JavaScript from the ground up — variables, functions, arrays,
+                            objects, DOM manipulation, events, and DOM traversing methods — with hands-on projects
+                            after every module.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 2 -->
+                    <div id="row" 
+                        class="faq-item rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-200 hover:shadow-md">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-slate-400">02</span>
+                                <span class="text-lg font-semibold text-slate-900">Do I need any prior coding experience?</span>
+                            </span>
+                            <div>
+                                <span
+                                    class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                        viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                    </svg>
+                                </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            Not at all. Basic knowledge of HTML and CSS is helpful, but we start JavaScript from
+                            scratch and move step by step so beginners can follow along comfortably.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 3 -->
+                    <div
+                        class="faq-item rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-200 hover:shadow-md">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-slate-400">03</span>
+                                <span class="text-lg font-semibold text-slate-900">Are the classes live or recorded?</span>
+                            </span>
+                            <div>
+                            <span
+                                class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            All classes are conducted live so you can ask questions in real time. Recordings of
+                            every session are shared afterwards, so you can revise whenever you like.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 4 -->
+                    <div
+                        class="faq-item rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-200 hover:shadow-md">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-slate-400">04</span>
+                                <span class="text-lg font-semibold text-slate-900">Will I get a certificate after completion?</span>
+                            </span>
+                            <div>
+                            <span
+                                class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            Yes. Once you complete all modules and submit the final project, you'll receive a
+                            certificate of completion that you can add to your resume and LinkedIn profile.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 5 -->
+                    <div
+                        class="faq-item rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-200 hover:shadow-md">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-slate-400">05</span>
+                                <span class="text-lg font-semibold text-slate-900">How long can I access the course material?</span>
+                            </span>
+                            <div>
+                            <span
+                                class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            You get lifetime access to all recordings, notes, and assignments — including any
+                            future updates we make to the course content.
+                        </div>
+                    </div>
+
+                    <!-- FAQ Item 6 -->
+                    <div
+                        class="faq-item rounded-2xl border border-slate-200 bg-white transition hover:border-indigo-200 hover:shadow-md">
+                        <button class="faq-question flex w-full cursor-pointer items-center justify-between gap-4 p-6 text-left">
+                            <span class="flex items-center gap-4">
+                                <span class="text-sm font-bold text-slate-400">06</span>
+                                <span class="text-lg font-semibold text-slate-900">What if I miss a class or get stuck?</span>
+                            </span>
+                            <div>
+                            <span
+                                class="faq-icon flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-slate-100 text-slate-500 transition duration-300">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none"
+                                    viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+                                </svg>
+                            </span>
+                            </div>
+                        </button>
+                        <div class="faq-answer hidden pb-6 pl-14 pr-6 leading-relaxed text-slate-600">
+                            No worries — you can watch the recording anytime, and our mentors are available in
+                            the doubt-support group to help you whenever you get stuck.
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <script src="js/custom.js"></script>
+</body>
+
+</html>
